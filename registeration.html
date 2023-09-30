@@ -1,87 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Friendship Zone Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Friendship Zone Registration</h1>
-
-    <!-- Registration Form -->
-    <form id="registrationForm" onsubmit="return validateForm()">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <img src="Friends.PNG" alt="picture of friends">
+    <center><h1>Friendship zone</h1></center>
+    <h2>Add Your Details to register</h2>
+    
+    <form>
+        <label  for="name">Name:</label>
+         <input type="text" placeholder="Enter your name"></form>
+          <br>
+         <form>
+            <label  for="name">Email:</label>
+             <input type="text" >
+        </form> 
+        <br>   
+        <form>
+            <label  for="name">Age:</label>
+             <input type="text" >
+        </form> 
         <br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <form>
+            <label  for="name">Birth Day:</label>
+             <input type="text" placeholder="mm/dd/yyyy">
+        </form> 
         <br>
-
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required>
+        <form>
+            <label for="name">Gender:</label>
+            <label >male</label>
+            <input type="radio">
+            <label>female</label>
+            <input type="radio">
+        </form>
+        <br/>
+        <form >
+            <label  for="name">About:</label>
+            <textarea id="name" rows="4" cols="70"></textarea>
+        </form> 
+        <br/>
+        <form>
+            <label  for="name">Phone:</label>
+             <input type="text" >
+        </form>
         <br>
+        <br>
+        <br>
+        <br>
+        <form>
+            <label  for="name">Interested In:</label>
+            <input type="radio" >
+            Friendship
+            <input type="radio">
+            Dating
+            <label for="file">Attachment:</label>
+            <input type="file" id="file"></input>
+            
+            
+            
+        </form>
+        <br>
+        <a href="user-confirmation.html"><button>Register</button></a>
+        <a href="admin-confirmation.html"><button>Register As Admin</button></a>
 
-        <!-- Add other form fields as needed -->
+    
 
-        <button type="submit">Register</button>
-        <button type="button" onclick="registerAsAdmin()">Register as Admin</button>
-    </form>
+    
 
-    <!-- User Confirmation Section -->
-    <div id="userConfirmation" style="display: none;">
-        <h2>User Registration Confirmation</h2>
-        <p>Congratulations! You have successfully registered as a user.</p>
-        <a href="Homepage.html">Back to Homepage</a>
-    </div>
-
-    <!-- Admin Confirmation Section -->
-    <div id="adminConfirmation" style="display: none;">
-        <h2>Admin Registration Confirmation</h2>
-        <p>You have been registered as an admin.</p>
-        <a href="Homepage.html">Back to Homepage</a>
-    </div>
-
-    <script>
-        function validateForm() {
-            // Validation for Name
-            var nameField = document.getElementById("name");
-            var nameValue = nameField.value;
-            if (nameValue.length < 3 || /\d/.test(nameValue)) {
-                alert("Name should be at least 3 characters long and should not contain numbers.");
-                nameField.focus();
-                return false;
-            }
-
-            // Validation for Email (You can use a more robust email validation regex)
-            var emailField = document.getElementById("email");
-            var emailValue = emailField.value;
-            if (!/\S+@\S+\.\S+/.test(emailValue)) {
-                alert("Please enter a valid email address.");
-                emailField.focus();
-                return false;
-            }
-
-            // Validation for Age
-            var ageField = document.getElementById("age");
-            var ageValue = ageField.value;
-            if (ageValue < 18) {
-                alert("Individuals below the age of 18 are not allowed to register.");
-                ageField.focus();
-                return false;
-            }
-            // Add other validations for form fields here if needed
-
-            // Show user confirmation section and hide registration form
-            document.getElementById("registrationForm").style.display = "none";
-            document.getElementById("userConfirmation").style.display = "block";
-
-            return false; // Prevent form submission
-        }
-
-        function registerAsAdmin() {
-            // Show admin confirmation section and hide registration form
-            document.getElementById("registrationForm").style.display = "none";
-            document.getElementById("adminConfirmation").style.display = "block";
-        }
-    </script>
 </body>
 </html>
